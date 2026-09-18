@@ -163,6 +163,9 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
 }
 .btn--ghost:hover { border-color: var(--color-border-accent); }
 
+/* --- Emphasis accent --- */
+.highlight { color: var(--color-accent-b); font-weight: 600; }
+
 /* --- About / Format shared prose styles --- */
 .about p, .format p { color: var(--color-text-secondary); margin-bottom: 20px; }
 .format h3 { font-size: 1.3rem; margin: 40px 0 16px; }
@@ -170,9 +173,16 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
 .format__theories li {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border-subtle);
+  border-left: 3px solid var(--color-accent-b);
   border-radius: var(--radius-md);
   padding: 16px 20px;
   color: var(--color-text-secondary);
+  transition: var(--transition-fast);
+}
+.format__theories li:hover {
+  border-color: var(--color-border-subtle);
+  border-left-color: var(--color-accent-b);
+  box-shadow: 0 10px 30px -12px var(--color-accent-glow);
 }
 .format__video-slot {
   aspect-ratio: 16 / 9;
@@ -186,10 +196,67 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
   margin-bottom: 32px;
 }
 
+.format__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 28px 0 32px;
+}
+@media (max-width: 860px) { .format__steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .format__steps { grid-template-columns: 1fr; } }
+.format__step {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-top: 3px solid var(--color-accent-b);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  transition: var(--transition-fast);
+}
+.format__step:hover {
+  box-shadow: 0 14px 32px -14px var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+.format__step-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-accent-b);
+  margin-bottom: 8px;
+}
+.format__step-title {
+  font-family: var(--font-subhead);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.format__step-time {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-b);
+  background: var(--color-accent-glow);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+}
+.format__step p { font-size: 0.92rem; margin-bottom: 0; }
+
+.format__callout {
+  border-left: 3px solid var(--color-accent-b);
+  background: var(--color-accent-glow);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 16px 20px;
+}
+
 .judges p { color: var(--color-text-secondary); margin-bottom: 24px; }
 .judges__placeholder, .results-placeholder, .gallery-placeholder {
   background: var(--color-bg-card);
-  border: 1px dashed var(--color-border-subtle);
+  border: 1px dashed var(--color-border-accent);
   border-radius: var(--radius-md);
   padding: 24px;
   color: var(--color-text-muted);
@@ -210,6 +277,7 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
   gap: 16px;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border-subtle);
+  border-left: 3px solid var(--color-accent-b);
   border-radius: var(--radius-md);
   padding: 14px 20px;
 }
@@ -231,6 +299,7 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
 .eligibility__list li {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border-subtle);
+  border-left: 3px solid var(--color-accent-b);
   border-radius: var(--radius-md);
   padding: 14px 20px;
 }
@@ -258,8 +327,12 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
 .timeline__list li {
   display: flex;
   gap: 24px;
-  padding: 16px 0;
+  padding: 16px 20px;
   border-bottom: 1px solid var(--color-border-subtle);
+  border-left: 3px solid var(--color-accent-b);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
 }
 .timeline__date {
   font-family: var(--font-display);
