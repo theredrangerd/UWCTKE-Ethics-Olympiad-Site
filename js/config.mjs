@@ -9,9 +9,7 @@ export const Config = {
   CASE_PACKAGE_DATE: '2026-10-29',
   COMPETITION_DATE: '2026-11-21', // tentative, per proposal
 
-  // REPLACE after deploying the Apps Script Web App in Task 10 —
-  // see apps-script/Code.gs deployment steps.
-  APPS_SCRIPT_URL: 'REPLACE_WITH_DEPLOYED_APPS_SCRIPT_WEB_APP_URL',
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbznBKyzQLF2FRXircB-Uu691hZzDFn53zKzNxyg79CGf_M0T_LOhhinzwHtJg82hnii/exec',
 
   // REPLACE with the real registration Google Form link once it exists.
   REGISTRATION_FORM_URL: 'REPLACE_WITH_REGISTRATION_GOOGLE_FORM_URL',
