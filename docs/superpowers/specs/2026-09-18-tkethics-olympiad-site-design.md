@@ -22,6 +22,30 @@ converts into an "Express Interest" or "Register" action.
 - Existing MPEO club site (github.com/theredrangerd/ethics-olympiad-site) —
   visual/brand reference (fonts, color family, crest, "✦" flourish motif),
   not a content source for this event.
+- `resources/logos/` — logo assets: `mpeo-omega-crest-transparent.png` /
+  `mpeo-omega-crest.svg` (pulled from the existing MPEO repo's `assets/`
+  folder — white omega, transparent background, so it reads correctly on
+  dark backgrounds only) and `tkethics-logo.png` (pulled from
+  tkethics.org — wordmark + mark, transparent background, reads on light
+  or dark).
+- `resources/media/` (to be created by user) — competition photos, added
+  after events happen; folder exists as the drop point but starts empty.
+- Second contributor: **Noelle** (another MPEO leader) also reviews/directs
+  content for this site, not just the user.
+
+## Additional requirements (from Noelle's review)
+
+Six items Noelle asked to be folded into the plan, incorporated into the
+sections below:
+
+1. Results — site must be easy to update post-competition with results/winners.
+2. How-the-competition-works content in both word and video form, including
+   structure and a basic introduction to ethical theories.
+3. Competition photos (gallery).
+4. Competition timeline — already covered.
+5. Introduction to judges — placeholder section only for now; real judge
+   info to follow later.
+6. MPEO logo + TKE logo — sourced above, used in header/footer/hero.
 
 ## Audience & tone
 
@@ -38,13 +62,26 @@ Single scrolling page, anchor-nav sections (mirrors the existing site's
 `index.html#hero` pattern):
 
 1. **Hero** — event name, one-line hook, key date, primary CTA (Express
-   Interest / Register depending on which window is currently open).
+   Interest / Register depending on which window is currently open). MPEO
+   and TKEthics logos both visible near the top (e.g. hero or header), read
+   as a joint presentation.
 2. **About/Objectives** — what UWC-TKEthics Olympiad is, why it exists
    (global UWC community, ethical reasoning, collaborative not adversarial),
    pulled from the proposal's Objectives section.
-3. **Format** — the 4-round structure (presentation → commentary → response
-   → judges' questions), explained simply; note "this is not a debate, teams
-   can agree."
+3. **Format & How It Works** — the 4-round structure (presentation →
+   commentary → response → judges' questions), explained simply; note
+   "this is not a debate, teams can agree." Two content forms per Noelle's
+   request:
+   - **Written explainer**: the round-by-round breakdown, plus a short,
+     accessible primer on the major ethical theories participants will
+     encounter/use (e.g. utilitarianism, deontology, virtue ethics) —
+     written for someone with zero prior philosophy background, matching
+     the proposal's "students do not have to be familiar with ethical
+     theories" stance.
+   - **Video explainer**: an embedded video slot (e.g. YouTube/Vimeo embed)
+     walking through the format. Video itself does not exist yet — ship
+     the section with a placeholder/"coming soon" state that degrades
+     gracefully (no broken embed) until the user supplies a video URL.
 4. **Eligibility & How to Register** — team size (3–5), Grade 7+, cost
    (~$120/team, marked tentative/estimated), the two-step funnel (Express
    Interest → Registration), Zoom logistics requirements.
@@ -52,13 +89,27 @@ Single scrolling page, anchor-nav sections (mirrors the existing site's
    window, case package release, competition day, all from the proposal's
    timeline page. Dates marked tentative where the proposal says so.
 6. **Judges & TKEthics** — credibility section: TKEthics partnership,
-   sample judge bios (Archie Stapleton, Zach Bloom), judging criteria
-   (official Ethics Olympiad score sheet basis).
-7. **FAQ** — pulled from the official competition rules (mic etiquette,
+   judging criteria (official Ethics Olympiad score sheet basis). The
+   "Introduction to Judges" subsection ships as a placeholder only —
+   e.g. "Judge bios coming soon" — structured so individual judge bio
+   cards can be dropped in later without restructuring the section. Not
+   populated with the two sample bios from the proposal PDF yet, since
+   Noelle's ask is explicitly to hold this open for real info later.
+7. **Gallery** — competition photos. Ships as a placeholder/"photos coming
+   soon" state (empty `resources/media/` folder exists as the drop point);
+   built so that dropping image files into that folder and referencing
+   them is the entire update process — no code restructuring needed later.
+8. **Results & Winners** — ships empty/placeholder ("Results will be
+   posted here after the competition") but structured now so it's a
+   trivial post-competition edit: a single clearly-marked block (e.g. one
+   HTML section or one small JSON/data block the page reads from) that
+   the user fills in with winning teams/standings after 21 Nov, not a
+   redesign.
+9. **FAQ** — pulled from the official competition rules (mic etiquette,
    ties, complaints, team conferences, timers, etc.), phrased as actual
    questions a coach/student would ask.
-8. **Contact/Leadership** — who's organizing (MPEO leadership), how to
-   reach them.
+10. **Contact/Leadership** — who's organizing (MPEO leadership), how to
+    reach them.
 
 All tentative figures (exact Nov date, $120/team, judge roster) are shown
 now, clearly labeled "tentative"/"estimated"/"TBC" rather than withheld,
@@ -73,6 +124,10 @@ map or multi-school visual motif, bigger typographic hero) than the
 club-meeting tone of the existing site. Concrete palette/type choices get
 finalized during implementation by inspecting the existing site's CSS
 first, then deliberately differentiating rather than cloning.
+
+Both organizing logos (MPEO omega crest, TKEthics mark) appear together,
+visually presenting this as a joint MPEO × TKEthics event rather than
+either party's solo project.
 
 ## Data collection
 
@@ -121,6 +176,12 @@ No automated test suite (static content site). Verification is manual:
 - Content review pass: every date/price/figure pulled from the proposal PDF
   cross-checked against the PDF for accuracy, tentative labels present
   where the source says "flexible"/"estimate"/"possible."
+- Placeholder sections (Judges, Gallery, Results, Video) checked for
+  graceful empty/coming-soon states — nothing broken-looking (empty boxes,
+  broken image icons, dead embeds) before real content lands.
+- MPEO logo checked specifically against a light background (it's a white
+  PNG/SVG, invisible on white) to confirm it's only placed on dark
+  surfaces where it's visible.
 
 ## Out of scope
 
