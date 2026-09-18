@@ -150,9 +150,8 @@ against the known window boundaries (no backend needed to flip these).
 
 ## Hosting & deployment
 
-New GitHub repository, deployed via **GitHub Pages**, with a **custom
-subdomain of the user's `.wetkarma` domain** pointed at it via CNAME
-(exact subdomain TBD with user, e.g. `tkethics.wetkarma.<tld>`). Chosen
+New GitHub repository, deployed via **GitHub Pages**, with the custom
+domain **`uwcethicsolympiad.wetkarma.com`** pointed at it via CNAME. Chosen
 over self-hosting on the user's Synology box specifically because GitHub
 Pages is CDN-backed and comfortably absorbs a traffic spike from an email
 blast to many schools, whereas a home connection's asymmetric bandwidth and
