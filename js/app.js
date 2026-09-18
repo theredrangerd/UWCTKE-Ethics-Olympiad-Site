@@ -102,11 +102,16 @@ function initInterestForm() {
     status.textContent = 'Submitting…';
 
     try {
-      await fetch(Config.APPS_SCRIPT_URL, {
+      const response = await fetch(Config.APPS_SCRIPT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(fields),
       });
+
+      if (!response.ok) {
+        throw new Error(`Apps Script returned ${response.status}`);
+      }
+
       status.textContent = "Thanks — we'll be in touch.";
       form.reset();
     } catch (err) {
