@@ -40,6 +40,7 @@ function initRegistrationCTA() {
   if (!cta) return;
 
   const state = getStageState(nowISO(), Config.REGISTRATION_OPEN, Config.REGISTRATION_CLOSE);
+  const formUrlReady = !Config.REGISTRATION_FORM_URL.startsWith('REPLACE_WITH');
 
   if (state === 'before') {
     cta.textContent = 'Registration opens 6 Oct 2026';
@@ -47,6 +48,10 @@ function initRegistrationCTA() {
     cta.removeAttribute('href');
   } else if (state === 'after') {
     cta.textContent = 'Registration closed';
+    cta.classList.add('btn--disabled');
+    cta.removeAttribute('href');
+  } else if (!formUrlReady) {
+    cta.textContent = 'Registration link coming soon';
     cta.classList.add('btn--disabled');
     cta.removeAttribute('href');
   } else {
@@ -75,11 +80,19 @@ function initInterestForm() {
   if (stage === 'before') {
     status.textContent = 'The interest form opens 22 Sept 2026.';
     submitBtn.disabled = true;
+    submitBtn.classList.add('btn--disabled');
     return;
   }
   if (stage === 'after') {
     status.textContent = 'The interest window has closed. Watch for the registration window instead.';
     submitBtn.disabled = true;
+    submitBtn.classList.add('btn--disabled');
+    return;
+  }
+  if (Config.APPS_SCRIPT_URL.startsWith('REPLACE_WITH')) {
+    status.textContent = "Sign-ups aren't open yet. Please check back soon.";
+    submitBtn.disabled = true;
+    submitBtn.classList.add('btn--disabled');
     return;
   }
 
@@ -108,8 +121,9 @@ function initInterestForm() {
         body: JSON.stringify(fields),
       });
 
-      if (!response.ok) {
-        throw new Error(`Apps Script returned ${response.status}`);
+      const payload = await response.json().catch(() => ({ ok: response.ok }));
+      if (!response.ok || payload.ok !== true) {
+        throw new Error(payload.error || `HTTP ${response.status}`);
       }
 
       status.textContent = "Thanks — we'll be in touch.";
