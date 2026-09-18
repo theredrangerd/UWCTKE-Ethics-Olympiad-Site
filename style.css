@@ -219,3 +219,36 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
 }
 .results-row__team { font-weight: 600; }
 .results-row__school { color: var(--color-text-muted); margin-left: auto; font-size: 0.9rem; }
+
+.eligibility__list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 48px;
+  color: var(--color-text-secondary);
+}
+.eligibility__list li {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+}
+
+.eligibility__funnel { display: grid; gap: 40px; grid-template-columns: 1fr 1fr; }
+@media (max-width: 720px) { .eligibility__funnel { grid-template-columns: 1fr; } }
+.funnel-step h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.funnel-step p { color: var(--color-text-secondary); margin-bottom: 16px; }
+
+.interest-form__row { display: grid; gap: 6px; margin-bottom: 16px; }
+.interest-form__row label { font-size: 0.85rem; color: var(--color-text-secondary); }
+.interest-form__row input, .interest-form__row select {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+.interest-form__error { color: #E5786B; font-size: 0.8rem; min-height: 1em; }
+.interest-form__honeypot { position: absolute; left: -9999px; }
+.interest-form__status { margin-top: 12px; color: var(--color-text-secondary); font-size: 0.9rem; }

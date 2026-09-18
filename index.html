@@ -121,7 +121,66 @@
         </p>
       </div>
     </section>
-    <section id="eligibility"></section>
+    <section id="eligibility" class="eligibility">
+      <div class="container container--narrow">
+        <h2>Eligibility &amp; how to register</h2>
+
+        <ul class="eligibility__list">
+          <li>Teams of <strong>3–5 students</strong>, Grade 7 or above.</li>
+          <li>Members may span different grade levels; cross-school teams are not recommended.</li>
+          <li>A background in philosophy or debate helps, but is not required.</li>
+          <li>Estimated cost: <strong>~$120 USD per team</strong> <span class="tag--tentative">Estimated</span>, covering tournament operations and judges.</li>
+          <li>Stable internet connection and a Zoom-capable device required on the day.</li>
+        </ul>
+
+        <div class="eligibility__funnel">
+          <div class="funnel-step">
+            <h3>Step 1 — Express Interest</h3>
+            <p>Tell us you're interested and we'll keep you posted on registration.</p>
+
+            <form id="interest-form" class="interest-form" novalidate>
+              <div class="interest-form__row">
+                <label for="if-name">Name</label>
+                <input id="if-name" name="name" type="text" autocomplete="name" required>
+                <p class="interest-form__error" data-error-for="name"></p>
+              </div>
+              <div class="interest-form__row">
+                <label for="if-email">Email</label>
+                <input id="if-email" name="email" type="email" autocomplete="email" required>
+                <p class="interest-form__error" data-error-for="email"></p>
+              </div>
+              <div class="interest-form__row">
+                <label for="if-school">School</label>
+                <input id="if-school" name="school" type="text" required>
+                <p class="interest-form__error" data-error-for="school"></p>
+              </div>
+              <div class="interest-form__row">
+                <label for="if-role">I am a</label>
+                <select id="if-role" name="role" required>
+                  <option value="">Select one…</option>
+                  <option value="student">Student</option>
+                  <option value="coach">Coach / supervising teacher</option>
+                </select>
+                <p class="interest-form__error" data-error-for="role"></p>
+              </div>
+              <div class="interest-form__honeypot" aria-hidden="true">
+                <label for="if-website">Website</label>
+                <input id="if-website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <button type="submit" class="btn btn--primary" id="interest-submit">Express Interest</button>
+              <p class="interest-form__status" id="interest-status" role="status"></p>
+            </form>
+          </div>
+
+          <div class="funnel-step">
+            <h3>Step 2 — Register your team</h3>
+            <p>Once the registration window opens, complete the full team registration form.</p>
+            <a id="registration-cta" href="#" class="btn btn--primary">Register</a>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="timeline"></section>
     <section id="judges" class="judges">
       <div class="container container--narrow">
