@@ -252,3 +252,26 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 32px; }
 .interest-form__error { color: #E5786B; font-size: 0.8rem; min-height: 1em; }
 .interest-form__honeypot { position: absolute; left: -9999px; }
 .interest-form__status { margin-top: 12px; color: var(--color-text-secondary); font-size: 0.9rem; }
+
+.timeline__list { list-style: none; display: grid; gap: 4px; }
+.timeline__list li {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.timeline__date {
+  font-family: var(--font-display);
+  color: var(--color-accent-b);
+  min-width: 160px;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 16px 0;
+}
+.faq__item summary { cursor: pointer; font-weight: 600; }
+.faq__item p { color: var(--color-text-secondary); margin-top: 12px; }
+
+.contact__list { list-style: none; display: grid; gap: 10px; margin-top: 20px; }
+.contact__list a { color: var(--color-accent-b); }
