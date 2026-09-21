@@ -19,7 +19,7 @@ function escapeHTML(str) {
  */
 export function renderResultsHTML(results) {
   if (!results || results.length === 0) {
-    return `<p class="results-placeholder">Results will be posted here after the competition on 21 Nov 2026 (tentative).</p>`;
+    return `<p class="results-placeholder">Results will be posted here after the competition on 21–22 Nov 2026.</p>`;
   }
 
   const rows = results

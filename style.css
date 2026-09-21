@@ -331,20 +331,24 @@ p { text-wrap: pretty; }
 .judges p { color: var(--color-text-secondary); margin-bottom: 24px; }
 .judges p a { color: var(--color-accent-b); text-decoration: underline; }
 .judges p a:hover { color: var(--color-text-primary); }
-.judges__panels {
+.judges__top {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.75fr;
-  gap: 24px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
   align-items: start;
-  margin: 32px auto;
+  margin-bottom: 32px;
 }
-@media (max-width: 960px) {
-  .judges__panels { grid-template-columns: 1fr 1fr; }
-  .judges__criteria { grid-column: 1 / -1; }
+@media (max-width: 860px) {
+  .judges__top { grid-template-columns: 1fr; gap: 24px; }
+}
+.judges__bios-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
 }
 @media (max-width: 640px) {
-  .judges__panels { grid-template-columns: 1fr; }
-  .judges__criteria { grid-column: auto; }
+  .judges__bios-row { grid-template-columns: 1fr; }
 }
 .judges__bio {
   background: var(--color-bg-card);
@@ -368,10 +372,10 @@ p { text-wrap: pretty; }
   background: linear-gradient(160deg, rgba(75, 79, 166, 0.16), rgba(75, 79, 166, 0.04));
   border: 1px solid rgba(75, 79, 166, 0.35);
   border-radius: var(--radius-lg);
-  padding: 18px 16px;
+  padding: 22px 20px;
 }
-.judges__criteria h3 { font-size: 0.85rem; margin-bottom: 12px; color: var(--color-accent-a); }
-.judges__criteria ul { list-style: none; display: grid; gap: 10px; color: var(--color-text-secondary); font-size: 0.78rem; }
+.judges__criteria h3 { font-size: 0.95rem; margin-bottom: 14px; color: var(--color-accent-a); }
+.judges__criteria ul { list-style: none; display: grid; gap: 11px; color: var(--color-text-secondary); font-size: 0.85rem; }
 .judges__criteria li { display: flex; align-items: baseline; gap: 6px; }
 .judges__criteria li span {
   position: relative;
@@ -391,10 +395,10 @@ p { text-wrap: pretty; }
   color: var(--color-text-primary);
 }
 .judges__criteria-total {
-  margin-top: 14px;
-  padding-top: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid rgba(75, 79, 166, 0.35);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
 }
 .judges__criteria-total a { color: var(--color-accent-a); text-decoration: underline; }
