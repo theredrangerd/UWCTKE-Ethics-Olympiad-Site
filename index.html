@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UWC-TKEthics Olympiad 2026</title>
   <meta name="description" content="An online ethics tournament for high school teams from schools around the world, hosted by MPEO in partnership with TKEthics.">
+  <link rel="icon" href="assets/logos/mpeo-omega-crest.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__logos">
       <img src="assets/logos/mpeo-omega-crest-transparent.png" alt="Model Philosophy Ethics Olympiad crest">
+      <a href="index.html" class="site-header__wordmark">UWC-TKEthics Olympiad</a>
       <img src="assets/logos/tkethics-logo.png" alt="TKEthics logo">
     </div>
     <nav class="site-header__nav">
@@ -36,7 +38,11 @@
         </svg>
       </div>
       <div class="container hero__inner">
-        <p class="hero__eyebrow">MPEO × TKEthics present</p>
+        <p class="hero__eyebrow">
+          <span class="hero__eyebrow-sprig" aria-hidden="true"></span>
+          MPEO × TKEthics present
+          <span class="hero__eyebrow-sprig hero__eyebrow-sprig--right" aria-hidden="true"></span>
+        </p>
         <h1 class="hero__title">UWC-TKEthics Olympiad 2026</h1>
         <p class="hero__subtitle">
           An online ethics tournament for high school teams from schools
@@ -50,17 +56,30 @@
           <a href="#eligibility" class="btn btn--primary">Express Interest</a>
           <a href="format.html" class="btn btn--ghost">See how it works</a>
         </div>
+        <ul class="hero__stats">
+          <li>4 Rounds</li>
+          <li>Teams of 3–5</li>
+          <li>Schools Worldwide</li>
+          <li>No Debate Experience Needed</li>
+        </ul>
       </div>
     </section>
+    <div class="ornament-divider" aria-hidden="true">
+      <span class="ornament-divider__line"></span>
+      <span class="ornament-divider__sprig"></span>
+      <span class="ornament-divider__mark"></span>
+      <span class="ornament-divider__sprig ornament-divider__sprig--right"></span>
+      <span class="ornament-divider__line ornament-divider__line--flip"></span>
+    </div>
     <section id="timeline" class="timeline">
       <div class="container container--narrow">
         <h2>Timeline</h2>
         <ul class="timeline__list">
-          <li><span class="timeline__date">22 Sept 2026</span><span>Express Interest form opens</span></li>
-          <li><span class="timeline__date">6 Oct 2026</span><span>Express Interest form closes; Registration opens</span></li>
-          <li><span class="timeline__date">26 Oct 2026</span><span>Registration closes</span></li>
-          <li><span class="timeline__date">29 Oct 2026</span><span>Case packages sent to registered teams</span></li>
-          <li><span class="timeline__date">21–22 Nov 2026</span><span>Competition day</span></li>
+          <li data-reveal><span class="timeline__date">22 Sept 2026</span><span>Express Interest form opens</span></li>
+          <li data-reveal><span class="timeline__date">6 Oct 2026</span><span>Express Interest form closes; Registration opens</span></li>
+          <li data-reveal><span class="timeline__date">26 Oct 2026</span><span>Registration closes</span></li>
+          <li data-reveal><span class="timeline__date">29 Oct 2026</span><span>Case packages sent to registered teams</span></li>
+          <li data-reveal><span class="timeline__date">21–22 Nov 2026</span><span>Competition day</span></li>
         </ul>
 
         <h3>Schedule for the day</h3>
@@ -127,44 +146,79 @@
         </div>
       </div>
     </section>
+    <div class="ornament-divider" aria-hidden="true">
+      <span class="ornament-divider__line"></span>
+      <span class="ornament-divider__sprig"></span>
+      <span class="ornament-divider__mark"></span>
+      <span class="ornament-divider__sprig ornament-divider__sprig--right"></span>
+      <span class="ornament-divider__line ornament-divider__line--flip"></span>
+    </div>
     <section id="eligibility" class="eligibility">
       <div class="container container--narrow">
         <h2>Eligibility &amp; how to register</h2>
 
         <ul class="eligibility__list">
-          <li>Teams of <strong>3–5 students</strong>, Grade 7 or above.</li>
-          <li>Members may span different grade levels; cross-school teams are not recommended.</li>
-          <li>A background in philosophy or debate helps, but is not required.</li>
-          <li>Cost: <strong>$181 SGD per team</strong>, covering tournament operations and judges.</li>
-          <li>Stable internet connection and a Zoom-capable device required on the day.</li>
+          <li data-reveal>Teams of <strong>3–5 students</strong>, Grade 7 or above.</li>
+          <li data-reveal>Members may span different grade levels; cross-school teams are not recommended.</li>
+          <li data-reveal>A background in philosophy or debate helps, but is not required.</li>
+          <li data-reveal>Cost: <strong>$181 SGD per team</strong>, covering tournament operations and judges.</li>
+          <li data-reveal>Stable internet connection and a Zoom-capable device required on the day.</li>
         </ul>
 
-        <div class="eligibility__funnel">
-          <div class="funnel-step">
-            <h3>Step 1 — Express Interest</h3>
-            <p>Tell us you're interested and we'll keep you posted on registration.</p>
+      </div>
 
-            <div class="funnel-step__embed">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform?embedded=true"
-                title="Express Interest form"
-                loading="lazy"
-              >Loading…</iframe>
-            </div>
-            <p class="funnel-step__fallback">
-              Form not loading?
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform" target="_blank" rel="noopener">Open it in a new tab</a>.
-            </p>
+      <div class="container">
+        <div class="funnel-step funnel-step--wide">
+          <h3>Step 1 — Express Interest</h3>
+          <p>Tell us you're interested and we'll keep you posted on registration.</p>
+
+          <div class="funnel-step__embed funnel-step__embed--wide">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform?embedded=true"
+              title="Express Interest form"
+              loading="lazy"
+            >Loading…</iframe>
           </div>
+          <p class="funnel-step__fallback">
+            Form not loading?
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform" target="_blank" rel="noopener">Open it in a new tab</a>.
+          </p>
 
-          <div class="funnel-step">
+          <div class="funnel-step__register">
             <h3>Step 2 — Register your team</h3>
             <p>Once the registration window opens, complete the full team registration form.</p>
+
+            <dl id="registration-countdown" class="countdown" hidden>
+              <div class="countdown__unit">
+                <dt>Days</dt>
+                <dd data-countdown="days">0</dd>
+              </div>
+              <div class="countdown__unit">
+                <dt>Hours</dt>
+                <dd data-countdown="hours">0</dd>
+              </div>
+              <div class="countdown__unit">
+                <dt>Minutes</dt>
+                <dd data-countdown="minutes">0</dd>
+              </div>
+              <div class="countdown__unit">
+                <dt>Seconds</dt>
+                <dd data-countdown="seconds">0</dd>
+              </div>
+            </dl>
+
             <a id="registration-cta" href="#" class="btn btn--primary">Register</a>
           </div>
         </div>
       </div>
     </section>
+    <div class="ornament-divider" aria-hidden="true">
+      <span class="ornament-divider__line"></span>
+      <span class="ornament-divider__sprig"></span>
+      <span class="ornament-divider__mark"></span>
+      <span class="ornament-divider__sprig ornament-divider__sprig--right"></span>
+      <span class="ornament-divider__line ornament-divider__line--flip"></span>
+    </div>
     <section id="faq" class="faq">
       <div class="container container--narrow">
         <h2>FAQ</h2>

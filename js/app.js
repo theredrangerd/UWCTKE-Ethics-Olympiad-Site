@@ -2,7 +2,9 @@
 import { renderGalleryHTML } from './gallery-render.mjs';
 import { renderResultsHTML } from './results-render.mjs';
 import { getStageState } from './funnel-state.mjs';
+import { getCountdownParts } from './countdown.mjs';
 import { Config } from './config.mjs';
+import { initScrollReveal } from './scroll-reveal.mjs';
 
 async function initGallery() {
   const root = document.getElementById('gallery-root');
@@ -34,6 +36,36 @@ function nowISO() {
   return new Date().toISOString();
 }
 
+function startRegistrationCountdown() {
+  const root = document.getElementById('registration-countdown');
+  if (!root) return;
+
+  const fields = {
+    days: root.querySelector('[data-countdown="days"]'),
+    hours: root.querySelector('[data-countdown="hours"]'),
+    minutes: root.querySelector('[data-countdown="minutes"]'),
+    seconds: root.querySelector('[data-countdown="seconds"]'),
+  };
+
+  root.hidden = false;
+
+  const tick = () => {
+    const parts = getCountdownParts(nowISO(), Config.REGISTRATION_OPEN);
+    if (parts.expired) {
+      clearInterval(intervalId);
+      root.hidden = true;
+      return;
+    }
+    fields.days.textContent = String(parts.days);
+    fields.hours.textContent = String(parts.hours);
+    fields.minutes.textContent = String(parts.minutes);
+    fields.seconds.textContent = String(parts.seconds);
+  };
+
+  tick();
+  const intervalId = setInterval(tick, 1000);
+}
+
 function initRegistrationCTA() {
   const cta = document.getElementById('registration-cta');
   if (!cta) return;
@@ -43,8 +75,9 @@ function initRegistrationCTA() {
 
   if (state === 'before') {
     cta.textContent = 'Registration opens 6 Oct 2026';
-    cta.classList.add('btn--disabled');
+    cta.classList.add('btn--pending');
     cta.removeAttribute('href');
+    startRegistrationCountdown();
   } else if (state === 'after') {
     cta.textContent = 'Registration closed';
     cta.classList.add('btn--disabled');
@@ -64,3 +97,4 @@ function initRegistrationCTA() {
 initGallery();
 initResults();
 initRegistrationCTA();
+initScrollReveal();
