@@ -7,7 +7,7 @@ export const Config = {
   REGISTRATION_OPEN: '2026-10-06T00:00:00+08:00',
   REGISTRATION_CLOSE: '2026-10-26T23:59:59+08:00',
   CASE_PACKAGE_DATE: '2026-10-29',
-  COMPETITION_DATE: '2026-11-21', // tentative, per proposal
+  COMPETITION_DATE: '2026-11-21', // confirmed; competition runs 21-22 Nov 2026 SGT
 
   APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbznBKyzQLF2FRXircB-Uu691hZzDFn53zKzNxyg79CGf_M0T_LOhhinzwHtJg82hnii/exec',
 
