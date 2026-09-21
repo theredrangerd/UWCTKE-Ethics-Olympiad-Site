@@ -2,7 +2,6 @@
 import { renderGalleryHTML } from './gallery-render.mjs';
 import { renderResultsHTML } from './results-render.mjs';
 import { getStageState } from './funnel-state.mjs';
-import { validateInterestForm } from './interest-form-validate.mjs';
 import { Config } from './config.mjs';
 
 async function initGallery() {
@@ -62,80 +61,6 @@ function initRegistrationCTA() {
   }
 }
 
-function showFieldErrors(errors) {
-  document.querySelectorAll('.interest-form__error').forEach((el) => (el.textContent = ''));
-  for (const [field, message] of Object.entries(errors)) {
-    const el = document.querySelector(`[data-error-for="${field}"]`);
-    if (el) el.textContent = message;
-  }
-}
-
-function initInterestForm() {
-  const form = document.getElementById('interest-form');
-  const status = document.getElementById('interest-status');
-  const submitBtn = document.getElementById('interest-submit');
-  if (!form) return;
-
-  const stage = getStageState(nowISO(), Config.INTEREST_OPEN, Config.INTEREST_CLOSE);
-  if (stage === 'before') {
-    status.textContent = 'The interest form opens 22 Sept 2026.';
-    submitBtn.disabled = true;
-    submitBtn.classList.add('btn--disabled');
-    return;
-  }
-  if (stage === 'after') {
-    status.textContent = 'The interest window has closed. Watch for the registration window instead.';
-    submitBtn.disabled = true;
-    submitBtn.classList.add('btn--disabled');
-    return;
-  }
-  if (Config.APPS_SCRIPT_URL.startsWith('REPLACE_WITH')) {
-    status.textContent = "Sign-ups aren't open yet. Please check back soon.";
-    submitBtn.disabled = true;
-    submitBtn.classList.add('btn--disabled');
-    return;
-  }
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const fields = {
-      name: form.name.value,
-      email: form.email.value,
-      school: form.school.value,
-      role: form.role.value,
-      website: form.website.value,
-    };
-
-    const { valid, errors } = validateInterestForm(fields);
-    showFieldErrors(errors);
-    if (!valid) return;
-
-    submitBtn.disabled = true;
-    status.textContent = 'Submitting…';
-
-    try {
-      const response = await fetch(Config.APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(fields),
-      });
-
-      const payload = await response.json().catch(() => ({ ok: response.ok }));
-      if (!response.ok || payload.ok !== true) {
-        throw new Error(payload.error || `HTTP ${response.status}`);
-      }
-
-      status.textContent = "Thanks — we'll be in touch.";
-      form.reset();
-    } catch (err) {
-      status.textContent = 'Something went wrong. Please try again or email us directly.';
-      submitBtn.disabled = false;
-    }
-  });
-}
-
 initGallery();
 initResults();
 initRegistrationCTA();
-initInterestForm();
