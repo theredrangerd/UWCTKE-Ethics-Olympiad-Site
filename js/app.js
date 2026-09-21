@@ -36,8 +36,9 @@ function nowISO() {
   return new Date().toISOString();
 }
 
-function startRegistrationCountdown() {
-  const root = document.getElementById('registration-countdown');
+function startInterestCountdown() {
+  const root = document.getElementById('eoi-countdown');
+  const label = document.getElementById('eoi-countdown-label');
   if (!root) return;
 
   const fields = {
@@ -48,12 +49,15 @@ function startRegistrationCountdown() {
   };
 
   root.hidden = false;
+  if (label) label.hidden = false;
 
   const tick = () => {
+    // The expression-of-interest form closes the moment registration opens.
     const parts = getCountdownParts(nowISO(), Config.REGISTRATION_OPEN);
     if (parts.expired) {
       clearInterval(intervalId);
       root.hidden = true;
+      if (label) label.hidden = true;
       return;
     }
     fields.days.textContent = String(parts.days);
@@ -77,7 +81,7 @@ function initRegistrationCTA() {
     cta.textContent = 'Registration opens 6 Oct 2026';
     cta.classList.add('btn--pending');
     cta.removeAttribute('href');
-    startRegistrationCountdown();
+    startInterestCountdown();
   } else if (state === 'after') {
     cta.textContent = 'Registration closed';
     cta.classList.add('btn--disabled');

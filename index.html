@@ -30,13 +30,6 @@
 
   <main>
     <section id="hero" class="hero">
-      <div class="hero__graphic" aria-hidden="true">
-        <span class="hero__circle hero__circle--a"></span>
-        <span class="hero__circle hero__circle--b"></span>
-        <svg class="hero__circle hero__circle--c" width="180" height="180" viewBox="0 0 180 180" focusable="false">
-          <circle cx="90" cy="90" r="90" style="fill:none;stroke:var(--color-text-secondary);stroke-width:1;opacity:0.2" stroke-dasharray="3 7"/>
-        </svg>
-      </div>
       <div class="container hero__inner">
         <p class="hero__eyebrow">
           <span class="hero__eyebrow-sprig" aria-hidden="true"></span>
@@ -170,42 +163,53 @@
       <div class="container">
         <div class="funnel-step funnel-step--wide">
           <h3>Step 1 — Express Interest</h3>
-          <p>Tell us you're interested and we'll keep you posted on registration.</p>
+          <p>
+            This isn't your team's registration: it just tells us you're
+            interested and gets you an update as soon as registration opens.
+            <strong>Step 2 below</strong> is the actual sign-up.
+          </p>
 
           <div class="funnel-step__embed funnel-step__embed--wide">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform?embedded=true"
-              title="Express Interest form"
-              loading="lazy"
-            >Loading…</iframe>
+            <div class="funnel-step__embed-chrome" aria-hidden="true">
+              <span class="funnel-step__embed-dot"></span>
+              <span class="funnel-step__embed-label">Google Form · Express Interest</span>
+            </div>
+            <div class="funnel-step__embed-body">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform?embedded=true"
+                title="Express Interest form"
+                loading="lazy"
+              >Loading…</iframe>
+            </div>
           </div>
           <p class="funnel-step__fallback">
-            Form not loading?
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform" target="_blank" rel="noopener">Open it in a new tab</a>.
+            Form not loading, or asked to sign in?
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIuhAGagc5DFZFMFiSPO38pOxw3OBlxvKFIQh_dhRvgZmaxA/viewform" target="_blank" rel="noopener">Open it in a new tab</a> instead.
           </p>
+
+          <p class="countdown-label" id="eoi-countdown-label" hidden>Expression of interest closes in:</p>
+          <dl id="eoi-countdown" class="countdown" hidden>
+            <div class="countdown__unit">
+              <dt>Days</dt>
+              <dd data-countdown="days">0</dd>
+            </div>
+            <div class="countdown__unit">
+              <dt>Hours</dt>
+              <dd data-countdown="hours">0</dd>
+            </div>
+            <div class="countdown__unit">
+              <dt>Minutes</dt>
+              <dd data-countdown="minutes">0</dd>
+            </div>
+            <div class="countdown__unit">
+              <dt>Seconds</dt>
+              <dd data-countdown="seconds">0</dd>
+            </div>
+          </dl>
 
           <div class="funnel-step__register">
             <h3>Step 2 — Register your team</h3>
             <p>Once the registration window opens, complete the full team registration form.</p>
-
-            <dl id="registration-countdown" class="countdown" hidden>
-              <div class="countdown__unit">
-                <dt>Days</dt>
-                <dd data-countdown="days">0</dd>
-              </div>
-              <div class="countdown__unit">
-                <dt>Hours</dt>
-                <dd data-countdown="hours">0</dd>
-              </div>
-              <div class="countdown__unit">
-                <dt>Minutes</dt>
-                <dd data-countdown="minutes">0</dd>
-              </div>
-              <div class="countdown__unit">
-                <dt>Seconds</dt>
-                <dd data-countdown="seconds">0</dd>
-              </div>
-            </dl>
 
             <a id="registration-cta" href="#" class="btn btn--primary">Register</a>
           </div>
