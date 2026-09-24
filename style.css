@@ -219,6 +219,10 @@ p { text-wrap: pretty; }
   background: var(--color-accent-gradient);
   color: #08090B;
 }
+.btn--lg {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+}
 .btn--primary:hover { box-shadow: 0 10px 30px -5px var(--color-accent-glow); }
 .btn--disabled {
   background: var(--color-bg-card);
